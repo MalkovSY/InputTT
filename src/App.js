@@ -57,6 +57,7 @@ function App() {
         (date.date() >= date.daysInMonth()) ? date.set('date', 1).format(format) : date.add(1, 'days').format(format));
       if(changedElem.month) setValue(
         (date.month() >= 11) ? date.set('month', 0).format(format) : date.add(1, 'months').format(format));
+      if(changedElem.year) setValue(setValue(date.add(1, 'years').format(format)));
       if(changedElem.hour) setValue(
         (date.hour() >= 23) ? date.set('hour', 0).format(format) : date.add(1, 'hours').format(format));
       if(changedElem.min) setValue(
@@ -68,6 +69,7 @@ function App() {
         (date.date() <= 1) ? date.set('date', date.daysInMonth()).format(format) : date.subtract(1, 'days').format(format));
       if(changedElem.month) setValue(
         (date.month() <= 0) ? date.set('month', 11).format(format) : date.subtract(1, 'months').format(format));
+      if(changedElem.year) setValue(setValue(date.subtract(1, 'years').format(format)));
       if(changedElem.hour) setValue(
         (date.hour() <= 1) ? date.set('hour', 23).format(format) : date.subtract(1, 'hours').format(format));
       if(changedElem.min) setValue(
